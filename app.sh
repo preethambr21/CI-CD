@@ -1,4 +1,4 @@
 #!/bin/bash
-echo "Application Version 3"
+echo "Application Version 4"
 
 
