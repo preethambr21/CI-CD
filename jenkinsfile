@@ -1,0 +1,34 @@
+pipeline{
+     agent any
+	 stages{
+	     stage('Checkout') {
+		    steps{
+			  git branch: 'main',
+			      url: 'https://github.com/preethambr21/CI-CD.git'
+				}
+			}
+		 stage('Build') {
+		     steps{
+			    sh 'echo "Building application.."'
+				}
+			}
+		 stage('Test') {
+		     steps{
+			     sh '"Testing application..."'
+				 }
+			}
+		 stage('Deploy') {
+		     steps{
+			     sh 'echo "Deploying application.."'
+				 }
+			}
+		}
+		post{
+		  success {
+		    echo 'CI/CD pipeline Success'
+		  }
+		   failure {
+		     echo 'CI/CD pipeline Failed'
+		   }
+		  }
+	}
